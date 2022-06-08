@@ -34,6 +34,18 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
+      body: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 50,
+            decoration: BoxDecoration(
+              color: DefaultColor.primary,
+              borderRadius: BorderRadius.circular(1),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
