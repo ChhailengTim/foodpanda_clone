@@ -33,6 +33,13 @@ class HomeScreen extends StatelessWidget {
             icon: const Icon(Icons.card_travel),
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(30),
+          child: Container(
+            padding: const EdgeInsets.all(8),
+            child: const Text("Search Bar"),
+          ),
+        ),
       ),
       body: Column(
         children: [
@@ -40,7 +47,6 @@ class HomeScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: 50,
             decoration: BoxDecoration(
-              color: DefaultColor.primary,
               borderRadius: BorderRadius.circular(1),
             ),
           ),
