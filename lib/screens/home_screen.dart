@@ -1,13 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodpanda_clone/controller/deals_controller.dart';
 import 'package:foodpanda_clone/model/food_custom.dart';
+
 import 'package:foodpanda_clone/utils/default_color.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final DealsController dealsController = Get.put(
+      DealsController(),
+    );
     return Scaffold(
       backgroundColor: DefaultColor.backgroundColor,
       appBar: AppBar(
@@ -40,24 +45,6 @@ class HomeScreen extends StatelessWidget {
             icon: const Icon(Icons.card_travel),
           ),
         ],
-        bottom: PreferredSize(
-          preferredSize: const Size.fromHeight(40),
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: CupertinoTextField(
-              obscureText: true,
-              placeholder: "Search for shops & restaurants",
-              prefix: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Icon(Icons.search),
-              ),
-              decoration: BoxDecoration(
-                color: DefaultColor.backgroundColor,
-                borderRadius: BorderRadius.circular(15),
-              ),
-            ),
-          ),
-        ),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -203,7 +190,7 @@ class HomeScreen extends StatelessWidget {
                                 Container(
                                   alignment: Alignment.bottomRight,
                                   child: const Image(
-                                    height: 60,
+                                    height: 50,
                                     image: AssetImage("image/food4.png"),
                                   ),
                                 ),
@@ -222,7 +209,7 @@ class HomeScreen extends StatelessWidget {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 600,
+              height: 500,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(1),
@@ -389,87 +376,23 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 150,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.pink,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Container(
-                            width: 150,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.pink,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Container(
-                            width: 150,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.pink,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Container(
-                            width: 150,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.pink,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Container(
-                            width: 150,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.pink,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Container(
-                            width: 150,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.pink,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Container(
-                            width: 150,
-                            height: 200,
-                            decoration: BoxDecoration(
-                              color: Colors.pink,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    Expanded(
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: dealsController.deals.length,
+                          itemBuilder: (BuildContext context, index) {
+                            return Card(
+                              child: Row(
+                                children: [
+                                  Image.asset(
+                                    '${dealsController.deals[index].img}',
+                                    height: 200,
+                                  ),
+                                ],
+                              ),
+                            );
+                          }),
+                    )
                   ],
                 ),
               ),
