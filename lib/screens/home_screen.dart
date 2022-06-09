@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_clone/controller/deals_controller.dart';
 import 'package:foodpanda_clone/model/food_custom.dart';
@@ -45,6 +46,28 @@ class HomeScreen extends StatelessWidget {
             icon: const Icon(Icons.card_travel),
           ),
         ],
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(50),
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 12.0,
+              right: 12.0,
+              bottom: 12.0,
+            ),
+            child: CupertinoTextField(
+              obscureText: true,
+              placeholder: "Search for shops & restaurants",
+              prefix: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Icon(Icons.search),
+              ),
+              decoration: BoxDecoration(
+                color: DefaultColor.backgroundColor,
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
