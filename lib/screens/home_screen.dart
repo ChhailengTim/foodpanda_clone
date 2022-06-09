@@ -68,33 +68,44 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Container(
                     width: MediaQuery.of(context).size.width,
-                    height: 200,
+                    height: 160,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(25),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(15.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Row(
                         children: [
-                          Text(
-                            "Food delivery",
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 25,
-                                ),
-                          ),
-                          Text(
-                            "Food delivery",
-                            style:
-                                Theme.of(context).textTheme.bodySmall!.copyWith(
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Food delivery",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge!
+                                    .copyWith(
+                                      fontWeight: FontWeight.w800,
+                                      fontSize: 25,
+                                    ),
+                              ),
+                              Text(
+                                "Food delivery",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .copyWith(
                                       color: Colors.black54,
                                       fontSize: 12,
                                     ),
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          const Image(
+                            height: 180,
+                            image: AssetImage("image/food1.png"),
                           ),
                         ],
                       ),
@@ -136,6 +147,16 @@ class HomeScreen extends StatelessWidget {
                                       color: Colors.black54,
                                       fontSize: 12,
                                     ),
+                              ),
+                              const SizedBox(
+                                height: 60,
+                              ),
+                              Container(
+                                alignment: Alignment.bottomRight,
+                                child: const Image(
+                                  height: 110,
+                                  image: AssetImage("image/food2.png"),
+                                ),
                               ),
                             ],
                           ),
