@@ -23,7 +23,7 @@ class FoodCustom extends StatelessWidget {
               ),
         ),
         Text(
-          subtext ?? "Food delivery",
+          subtext ?? "",
           style: Theme.of(context).textTheme.bodySmall!.copyWith(
                 color: Colors.black54,
                 fontSize: 12,
