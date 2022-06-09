@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodpanda_clone/model/food_custom.dart';
 import 'package:foodpanda_clone/utils/default_color.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -71,44 +72,31 @@ class HomeScreen extends StatelessWidget {
                     height: 160,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(25),
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Row(
-                        children: [
-                          Column(
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Food delivery",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleLarge!
-                                    .copyWith(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 25,
-                                    ),
-                              ),
-                              Text(
-                                "Food delivery",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                      color: Colors.black54,
-                                      fontSize: 12,
-                                    ),
+                            children: const [
+                              FoodCustom(
+                                text: "Food delivery",
+                                subtext: "Order food you love",
                               ),
                             ],
                           ),
-                          const Spacer(),
-                          const Image(
+                        ),
+                        const Spacer(),
+                        Container(
+                          alignment: Alignment.bottomRight,
+                          child: const Image(
                             height: 180,
                             image: AssetImage("image/food1.png"),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   const SizedBox(
@@ -121,32 +109,16 @@ class HomeScreen extends StatelessWidget {
                         height: 250,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(25),
+                          borderRadius: BorderRadius.circular(12),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(15.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "Shops",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleLarge!
-                                    .copyWith(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 25,
-                                    ),
-                              ),
-                              Text(
-                                "Groceries and more",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
-                                    .copyWith(
-                                      color: Colors.black54,
-                                      fontSize: 12,
-                                    ),
+                              const FoodCustom(
+                                text: "Shops",
+                                subtext: "Groceries and more",
                               ),
                               const SizedBox(
                                 height: 60,
@@ -172,32 +144,31 @@ class HomeScreen extends StatelessWidget {
                             height: 160,
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(25),
+                              borderRadius: BorderRadius.circular(12),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(15.0),
                               child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    "pandamart",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleLarge!
-                                        .copyWith(
-                                          fontWeight: FontWeight.w800,
-                                          fontSize: 20,
-                                        ),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const [
+                                      FoodCustom(
+                                        text: "pandamart",
+                                        subtext: "Fast delivery, up to 40% off",
+                                      ),
+                                    ],
                                   ),
-                                  Text(
-                                    "Fast delivery, up to 40% off",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: Colors.black54,
-                                          fontSize: 12,
-                                        ),
+                                  const SizedBox(
+                                    height: 6,
+                                  ),
+                                  Container(
+                                    alignment: Alignment.bottomRight,
+                                    child: const Image(
+                                      height: 80,
+                                      image: AssetImage("image/food3.png"),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -211,35 +182,32 @@ class HomeScreen extends StatelessWidget {
                             height: 80,
                             decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(25),
+                              borderRadius: BorderRadius.circular(12),
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(15.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Pick-up",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleLarge!
-                                        .copyWith(
-                                          fontWeight: FontWeight.w800,
-                                          fontSize: 20,
-                                        ),
+                            child: Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: const [
+                                      FoodCustom(
+                                        text: "Pick-up",
+                                        subtext: "Up to 50% off",
+                                      ),
+                                    ],
                                   ),
-                                  Text(
-                                    "Up to 50% off",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodySmall!
-                                        .copyWith(
-                                          color: Colors.black54,
-                                          fontSize: 12,
-                                        ),
+                                ),
+                                const Spacer(),
+                                Container(
+                                  alignment: Alignment.bottomRight,
+                                  child: const Image(
+                                    height: 60,
+                                    image: AssetImage("image/food4.png"),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
