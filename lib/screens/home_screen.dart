@@ -55,7 +55,8 @@ class HomeScreen extends StatelessWidget {
               bottom: 12.0,
             ),
             child: CupertinoTextField(
-              obscureText: true,
+              obscureText: false,
+              autofocus: true,
               placeholder: "Search for shops & restaurants",
               prefix: const Padding(
                 padding: EdgeInsets.all(8.0),
@@ -287,30 +288,6 @@ class HomeScreen extends StatelessWidget {
                             );
                           }),
                     ),
-                    // Expanded(
-                    //   flex: 1,
-                    //   child: ListView.builder(
-                    //       scrollDirection: Axis.horizontal,
-                    //       itemCount: dealsController.cuisines.length,
-                    //       itemBuilder: (context, index) {
-                    //         return Card(
-                    //           child: Column(
-                    //             children: [
-                    //               Image.asset(
-                    //                 '${dealsController.cuisines[index].imgc}',
-                    //                 height: 25,
-                    //               ),
-                    //               Text(
-                    //                 dealsController.cuisines[index].title
-                    //                     .toString(),
-                    //                 style: const TextStyle(
-                    //                     fontWeight: FontWeight.bold),
-                    //               ),
-                    //             ],
-                    //           ),
-                    //         );
-                    //       }),
-                    // ),
                     const SizedBox(
                       height: 10,
                     ),
