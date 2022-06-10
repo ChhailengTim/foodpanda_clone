@@ -1,3 +1,4 @@
+import 'package:foodpanda_clone/model/cuisines_model.dart';
 import 'package:foodpanda_clone/model/deals_model.dart';
 import 'package:get/get.dart';
 
@@ -18,5 +19,73 @@ class DealsController extends GetxController {
     DealsModel(img: "image/deals/c13.png"),
     DealsModel(img: "image/deals/c14.png"),
     DealsModel(img: "image/deals/c15.png"),
+  ];
+  final cuisines = <CuisinesModel>[
+    CuisinesModel(
+      imgc: "image/cuisines/cs1.png",
+      title: "Asian",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs2.png",
+      title: "Fast Food",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs3.png",
+      title: "Cambodian",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs16.png",
+      title: "Desserts",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs9.png",
+      title: "Korean",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs10.png",
+      title: "Japanese",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs11.png",
+      title: "Indian",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs12.png",
+      title: "European",
+    ),
+  ];
+  final cuisines2 = <CuisinesModel>[
+    CuisinesModel(
+      imgc: "image/cuisines/cs5.png",
+      title: "Beverage",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs6.png",
+      title: "Southeast Asian",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs7.png",
+      title: "Cake & Bakery",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs8.png",
+      title: "Pizza",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs13.png",
+      title: "Chinese",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs14.png",
+      title: "Western",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs15.png",
+      title: "Thai",
+    ),
+    CuisinesModel(
+      imgc: "image/cuisines/cs16.png",
+      title: "Laos",
+    ),
   ];
 }
