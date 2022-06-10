@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_clone/controller/deals_controller.dart';
 import 'package:foodpanda_clone/model/food_custom.dart';
+import 'package:foodpanda_clone/screens/food_delivery/food_delivery.dart';
 
 import 'package:foodpanda_clone/utils/default_color.dart';
 import 'package:get/get.dart';
@@ -56,7 +57,6 @@ class HomeScreen extends StatelessWidget {
             ),
             child: CupertinoTextField(
               obscureText: false,
-              autofocus: true,
               placeholder: "Search for shops & restaurants",
               prefix: const Padding(
                 padding: EdgeInsets.all(8.0),
@@ -91,8 +91,17 @@ class HomeScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(15.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               FoodCustom(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          const FoodDelivery(),
+                                    ),
+                                  );
+                                },
                                 text: "Food delivery",
                                 subtext: "Order food you love",
                               ),
