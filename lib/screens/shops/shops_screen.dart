@@ -198,6 +198,18 @@ class ShopsScreen extends StatelessWidget {
                         color: Colors.pink,
                         width: 100,
                         height: 100,
+                        child: Column(
+                          children: const [
+                            Text(
+                              "Opens at Sun,\n08:00",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 5,
@@ -242,6 +254,18 @@ class ShopsScreen extends StatelessWidget {
                         color: Colors.pink,
                         width: 100,
                         height: 100,
+                        child: Column(
+                          children: const [
+                            Text(
+                              "Opens at Sun,\n07:30",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 5,
