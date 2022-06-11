@@ -309,6 +309,118 @@ class FoodDelivery extends StatelessWidget {
                     ),
                   ],
                 ),
+                Stack(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          height: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.pink,
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.pink,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: const Padding(
+                                padding: EdgeInsets.all(2.0),
+                                child: Text(
+                                  "New",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            const Text(
+                              "Just Eat Express TK",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            const Spacer(),
+                            const Icon(
+                              Icons.star,
+                              color: Colors.pink,
+                            ),
+                            const Text("2.0 (1)"),
+                          ],
+                        ),
+                        Row(
+                          children: const [
+                            Text("\$\$\$ - "),
+                            Text("Asian"),
+                          ],
+                        ),
+                        Row(
+                          children: const [
+                            Icon(
+                              Icons.directions_bike,
+                              color: Colors.pink,
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "Free delivery",
+                              style: TextStyle(
+                                  color: Colors.pink,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 90,
+                          height: 25,
+                          decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: const Center(child: Text("Featured")),
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Container(
+                          width: 110,
+                          height: 25,
+                          decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: const Center(child: Text("30% Discount")),
+                        ),
+                        const SizedBox(
+                          height: 110,
+                        ),
+                        Container(
+                          width: 50,
+                          height: 25,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: const Center(
+                              child: Text(
+                            "15 min",
+                            style: TextStyle(color: Colors.black),
+                          )),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
                 const Text(
                   "data",
                   style: TextStyle(
