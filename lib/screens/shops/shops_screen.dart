@@ -74,6 +74,91 @@ class ShopsScreen extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               [
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: const BoxDecoration(
+                            color: Colors.black26,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Image.network(
+                              "https://cdn-icons-png.flaticon.com/512/135/135763.png?w=360",
+                              height: 40,
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          "Groceries",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: const BoxDecoration(
+                            color: Colors.black26,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Image.network(
+                              "https://iconarchive.com/download/i103468/paomedia/small-n-flat/shop.ico",
+                              height: 30,
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          "Convenience",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 50,
+                          decoration: const BoxDecoration(
+                            color: Colors.black26,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Center(
+                            child: Image.network(
+                              "https://www.shareicon.net/data/512x512/2016/09/23/833535_water_512x512.png",
+                              height: 40,
+                            ),
+                          ),
+                        ),
+                        const Text(
+                          "Household Living",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
                 SizedBox(
                   height: 150,
                   child: ListView.builder(
@@ -91,6 +176,13 @@ class ShopsScreen extends StatelessWidget {
                           ),
                         );
                       }),
+                ),
+                const Text(
+                  "Shop by store",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),
