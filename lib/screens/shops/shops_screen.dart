@@ -1,12 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodpanda_clone/controller/deals_controller.dart';
 import 'package:foodpanda_clone/utils/default_color.dart';
+import 'package:get/get.dart';
 
 class ShopsScreen extends StatelessWidget {
   const ShopsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final DealsController dealsController = Get.put(DealsController());
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -66,6 +69,30 @@ class ShopsScreen extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                SizedBox(
+                  height: 150,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: dealsController.deals.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          child: Row(
+                            children: [
+                              Image.asset(
+                                '${dealsController.deals[index].img}',
+                                height: 200,
+                              ),
+                            ],
+                          ),
+                        );
+                      }),
+                ),
+              ],
             ),
           ),
         ],
