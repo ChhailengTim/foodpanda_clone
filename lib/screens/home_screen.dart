@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:foodpanda_clone/controller/deals_controller.dart';
 import 'package:foodpanda_clone/model/food_custom.dart';
 import 'package:foodpanda_clone/screens/food_delivery/food_delivery.dart';
+import 'package:foodpanda_clone/screens/shops/shops_screen.dart';
 
 import 'package:foodpanda_clone/utils/default_color.dart';
 import 'package:get/get.dart';
@@ -123,33 +124,43 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.45,
-                        height: 250,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const FoodCustom(
-                                text: "Shops",
-                                subtext: "Groceries and more",
-                              ),
-                              const SizedBox(
-                                height: 60,
-                              ),
-                              Container(
-                                alignment: Alignment.bottomRight,
-                                child: const Image(
-                                  height: 110,
-                                  image: AssetImage("image/food2.png"),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ShopsScreen(),
+                            ),
+                          );
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 0.45,
+                          height: 250,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const FoodCustom(
+                                  text: "Shops",
+                                  subtext: "Groceries and more",
                                 ),
-                              ),
-                            ],
+                                const SizedBox(
+                                  height: 60,
+                                ),
+                                Container(
+                                  alignment: Alignment.bottomRight,
+                                  child: const Image(
+                                    height: 110,
+                                    image: AssetImage("image/food2.png"),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
