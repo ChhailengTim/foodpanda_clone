@@ -74,90 +74,93 @@ class ShopsScreen extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                Row(
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: const BoxDecoration(
-                            color: Colors.black26,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Center(
-                            child: Image.network(
-                              "https://cdn-icons-png.flaticon.com/512/135/135763.png?w=360",
-                              height: 40,
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            decoration: const BoxDecoration(
+                              color: Colors.black26,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: Image.network(
+                                "https://cdn-icons-png.flaticon.com/512/135/135763.png?w=360",
+                                height: 40,
+                              ),
                             ),
                           ),
-                        ),
-                        const Text(
-                          "Groceries",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: const BoxDecoration(
-                            color: Colors.black26,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Center(
-                            child: Image.network(
-                              "https://iconarchive.com/download/i103468/paomedia/small-n-flat/shop.ico",
-                              height: 30,
+                          const Text(
+                            "Groceries",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            decoration: const BoxDecoration(
+                              color: Colors.black26,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: Image.network(
+                                "https://iconarchive.com/download/i103468/paomedia/small-n-flat/shop.ico",
+                                height: 30,
+                              ),
                             ),
                           ),
-                        ),
-                        const Text(
-                          "Convenience",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )
-                      ],
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          width: 50,
-                          decoration: const BoxDecoration(
-                            color: Colors.black26,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Center(
-                            child: Image.network(
-                              "https://www.shareicon.net/data/512x512/2016/09/23/833535_water_512x512.png",
-                              height: 40,
+                          const Text(
+                            "Convenience",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 15,
+                      ),
+                      Column(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 50,
+                            decoration: const BoxDecoration(
+                              color: Colors.black26,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: Image.network(
+                                "https://www.shareicon.net/data/512x512/2016/09/23/833535_water_512x512.png",
+                                height: 40,
+                              ),
                             ),
                           ),
-                        ),
-                        const Text(
-                          "Household Living",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+                          const Text(
+                            "Household Living",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 150,
@@ -177,11 +180,102 @@ class ShopsScreen extends StatelessWidget {
                         );
                       }),
                 ),
-                const Text(
-                  "Shop by store",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Shop by store",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        color: Colors.pink,
+                        width: 100,
+                        height: 100,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Column(
+                        children: [
+                          const Text(
+                            "Dadana Floral Boutique",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Row(
+                            children: const [
+                              Icon(
+                                Icons.directions_bike,
+                                color: Colors.pink,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "\$ 0.65",
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Container(
+                        color: Colors.pink,
+                        width: 100,
+                        height: 100,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Column(
+                        children: [
+                          const Text(
+                            "Master Seafood & Meat",
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Row(
+                            children: const [
+                              Icon(
+                                Icons.directions_bike,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "Free delivery",
+                                style: TextStyle(
+                                  color: Colors.pink,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],
