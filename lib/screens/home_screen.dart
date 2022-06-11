@@ -78,45 +78,44 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
               child: Column(
                 children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: 160,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              FoodCustom(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          const FoodDelivery(),
-                                    ),
-                                  );
-                                },
-                                text: "Food delivery",
-                                subtext: "Order food you love",
-                              ),
-                            ],
+                  GestureDetector(
+                    onTap: (() => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const FoodDelivery(),
                           ),
-                        ),
-                        const Spacer(),
-                        Container(
-                          alignment: Alignment.bottomRight,
-                          child: const Image(
-                            height: 180,
-                            image: AssetImage("image/food1.png"),
+                        )),
+                    child: Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 160,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(15.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                FoodCustom(
+                                  text: "Food delivery",
+                                  subtext: "Order food you love",
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                          const Spacer(),
+                          Container(
+                            alignment: Alignment.bottomRight,
+                            child: const Image(
+                              height: 180,
+                              image: AssetImage("image/food1.png"),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(
