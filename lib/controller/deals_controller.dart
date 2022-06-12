@@ -8,7 +8,7 @@ class DealsController extends GetxController {
   final apibasehelper = ApiBaseHelper();
   final pizza = Pizza().obs;
   final listPizza = <Pizza>[].obs;
-  final isLoad = false;
+  final isLoad = false.obs;
 
   final deals = <DealsModel>[
     DealsModel(img: "image/deals/c1.png"),
@@ -97,16 +97,19 @@ class DealsController extends GetxController {
   ];
 
   Future getListPizza() async {
+    //isLoad.value = true;
     apibasehelper
         .onNetworkRequesting(
             urlFull: "https://gunter-food-api.herokuapp.com/pizza",
             methode: METHODE.get,
             isAuthorize: false)
         .then((value) => {
+              listPizza.clear(),
               value.map((e) {
                 pizza.value = Pizza.fromJson(e);
                 listPizza.add(pizza.value);
               }).toList(),
+              //isLoad.value = false,
             });
   }
 }
