@@ -77,28 +77,94 @@ class ShopsScreen extends StatelessWidget {
               [
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Row(
-                    children: const [
-                      ShopsItems(
-                        img:
-                            "https://cdn-icons-png.flaticon.com/512/135/135763.png?w=360",
-                        title: "Groceries",
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: const [
+                          ShopsItems(
+                            img:
+                                "https://cdn-icons-png.flaticon.com/512/135/135763.png?w=360",
+                            title: "Groceries",
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          ShopsItems(
+                            img:
+                                "https://iconarchive.com/download/i103468/paomedia/small-n-flat/shop.ico",
+                            title: "Convenience",
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          ShopsItems(
+                            img:
+                                "https://www.shareicon.net/data/512x512/2016/09/23/833535_water_512x512.png",
+                            title: "Household",
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          ShopsItems(
+                            img:
+                                "https://icon-library.com/images/icon-lipstick/icon-lipstick-11.jpg",
+                            title: "Beauty",
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        width: 15,
+                      const SizedBox(
+                        height: 40,
                       ),
-                      ShopsItems(
-                        img:
-                            "https://iconarchive.com/download/i103468/paomedia/small-n-flat/shop.ico",
-                        title: "Convenience",
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: const [
+                          ShopsItems(
+                            img:
+                                "https://cdn-icons-png.flaticon.com/512/683/683974.png",
+                            title: "Beverages",
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          ShopsItems(
+                            img:
+                                "https://www.shareicon.net/download/2017/04/22/885118_food_512x512.png",
+                            title: "Bakery",
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          ShopsItems(
+                            img:
+                                "https://cdn-icons-png.flaticon.com/512/1529/1529570.png",
+                            title: "Health",
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          ShopsItems(
+                            img:
+                                "https://medias.pylones.com/img/p/6/4/6/2/6462-large_default.jpg",
+                            title: "Electronics",
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        width: 15,
+                      const SizedBox(
+                        height: 40,
                       ),
-                      ShopsItems(
-                        img:
-                            "https://www.shareicon.net/data/512x512/2016/09/23/833535_water_512x512.png",
-                        title: "Household Living",
+                      Row(
+                        //mainAxisAlignment: MainAxisAlignment.start,
+                        children: const [
+                          SizedBox(
+                            width: 6,
+                          ),
+                          ShopsItems(
+                            img:
+                                "https://i.pinimg.com/originals/c3/6e/a4/c36ea4eb6b5af4332c7f1f11eff88015.png",
+                            title: "Pets",
+                          ),
+                        ],
                       ),
                     ],
                   ),

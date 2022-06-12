@@ -17,7 +17,7 @@ class ShopsItems extends StatelessWidget {
           height: 50,
           width: 50,
           decoration: const BoxDecoration(
-            color: Colors.black26,
+            color: Colors.black12,
             shape: BoxShape.circle,
           ),
           child: Center(
