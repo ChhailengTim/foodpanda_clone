@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_clone/controller/deals_controller.dart';
+import 'package:foodpanda_clone/screens/shops/shops_items_head.dart';
 import 'package:foodpanda_clone/utils/default_color.dart';
 import 'package:get/get.dart';
 
@@ -77,87 +78,27 @@ class ShopsScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Row(
-                    children: [
-                      Column(
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: Colors.black26,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: Image.network(
-                                "https://cdn-icons-png.flaticon.com/512/135/135763.png?w=360",
-                                height: 40,
-                              ),
-                            ),
-                          ),
-                          const Text(
-                            "Groceries",
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                        ],
+                    children: const [
+                      ShopsItems(
+                        img:
+                            "https://cdn-icons-png.flaticon.com/512/135/135763.png?w=360",
+                        title: "Groceries",
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 15,
                       ),
-                      Column(
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: Colors.black26,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: Image.network(
-                                "https://iconarchive.com/download/i103468/paomedia/small-n-flat/shop.ico",
-                                height: 30,
-                              ),
-                            ),
-                          ),
-                          const Text(
-                            "Convenience",
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                        ],
+                      ShopsItems(
+                        img:
+                            "https://iconarchive.com/download/i103468/paomedia/small-n-flat/shop.ico",
+                        title: "Convenience",
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 15,
                       ),
-                      Column(
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 50,
-                            decoration: const BoxDecoration(
-                              color: Colors.black26,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: Image.network(
-                                "https://www.shareicon.net/data/512x512/2016/09/23/833535_water_512x512.png",
-                                height: 40,
-                              ),
-                            ),
-                          ),
-                          const Text(
-                            "Household Living",
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                        ],
+                      ShopsItems(
+                        img:
+                            "https://www.shareicon.net/data/512x512/2016/09/23/833535_water_512x512.png",
+                        title: "Household Living",
                       ),
                     ],
                   ),
