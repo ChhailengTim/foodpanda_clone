@@ -1,8 +1,15 @@
+import 'package:foodpanda_clone/api_basehelper/api_base_helper.dart';
 import 'package:foodpanda_clone/model/cuisines_model.dart';
 import 'package:foodpanda_clone/model/deals_model.dart';
+import 'package:foodpanda_clone/model/pizza_moldel.dart';
 import 'package:get/get.dart';
 
 class DealsController extends GetxController {
+  final apibasehelper = ApiBaseHelper();
+  final pizza = Pizza().obs;
+  final listPizza = <Pizza>[].obs;
+  final isLoad = false;
+
   final deals = <DealsModel>[
     DealsModel(img: "image/deals/c1.png"),
     DealsModel(img: "image/deals/c2.png"),
@@ -88,4 +95,18 @@ class DealsController extends GetxController {
       title: "Laos",
     ),
   ];
+
+  Future getListPizza() async {
+    apibasehelper
+        .onNetworkRequesting(
+            urlFull: "https://gunter-food-api.herokuapp.com/pizza",
+            methode: METHODE.get,
+            isAuthorize: false)
+        .then((value) => {
+              value.map((e) {
+                pizza.value = Pizza.fromJson(e);
+                listPizza.add(pizza.value);
+              }).toList(),
+            });
+  }
 }
