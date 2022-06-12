@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodpanda_clone/utils/default_color.dart';
 
 class PandamartScreen extends StatelessWidget {
   const PandamartScreen({Key? key}) : super(key: key);
@@ -27,6 +29,47 @@ class PandamartScreen extends StatelessWidget {
               color: Colors.pink,
             ),
           ),
+        ],
+      ),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            backgroundColor: Colors.white,
+            floating: true,
+            bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(16),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 12.0,
+                  right: 12.0,
+                  bottom: 12.0,
+                ),
+                child: CupertinoTextField(
+                  obscureText: false,
+                  placeholder: "Search for restaurants, cuisines, and dishes",
+                  prefix: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Icon(Icons.search),
+                  ),
+                  decoration: BoxDecoration(
+                    color: DefaultColor.backgroundColor,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  suffix: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.display_settings,
+                      color: Colors.pink,
+                      size: 25,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate([]),
+          )
         ],
       ),
     );
