@@ -208,45 +208,63 @@ class _ShopsScreenState extends State<ShopsScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 500,
-                  child: ListView.builder(
-                      itemCount: dealsController.listPizza.length,
-                      itemBuilder: (context, index) {
-                        return Card(
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  Image.network(
-                                    '${dealsController.listPizza[index].image}',
-                                    height: 100,
-                                  ),
-                                  Column(
-                                    children: [
-                                      Text(
-                                        '${dealsController.listPizza[index].name}',
+                Obx(
+                  () => SizedBox(
+                    height: 2050,
+                    child: ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: dealsController.listPizza.length,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            child: Row(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Image.network(
+                                      '${dealsController.listPizza[index].image}',
+                                      height: 100,
+                                    ),
+                                    Container(
+                                      alignment: Alignment.center,
+                                      height: 25,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                        color: Colors.pink,
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      child: Text(
+                                        '${dealsController.listPizza[index].id}',
                                         style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15,
+                                          color: Colors.white,
                                         ),
                                       ),
-                                      Text(
-                                        '${dealsController.listPizza[index].price} \$',
-                                        style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15,
-                                          color: Colors.pink,
-                                        ),
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      '${dealsController.listPizza[index].name}',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
                                       ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                        );
-                      }),
+                                    ),
+                                    Text(
+                                      '${dealsController.listPizza[index].price} \$',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10,
+                                        color: Colors.pink,
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          );
+                        }),
+                  ),
                 ),
               ],
             ),
