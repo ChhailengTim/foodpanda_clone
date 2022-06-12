@@ -1,16 +1,27 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_clone/controller/deals_controller.dart';
-import 'package:foodpanda_clone/screens/shops/shops_items_head.dart';
+import 'package:foodpanda_clone/model/shops_items_model.dart';
 import 'package:foodpanda_clone/utils/default_color.dart';
 import 'package:get/get.dart';
 
-class ShopsScreen extends StatelessWidget {
+class ShopsScreen extends StatefulWidget {
   const ShopsScreen({Key? key}) : super(key: key);
 
   @override
+  State<ShopsScreen> createState() => _ShopsScreenState();
+}
+
+class _ShopsScreenState extends State<ShopsScreen> {
+  final DealsController dealsController = Get.put(DealsController());
+  @override
+  void initState() {
+    dealsController.getListPizza();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final DealsController dealsController = Get.put(DealsController());
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -197,117 +208,45 @@ class ShopsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Container(
-                        color: Colors.pink,
-                        width: 100,
-                        height: 100,
-                        child: Column(
-                          children: const [
-                            Text(
-                              "Opens at Sun,\n08:00",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Column(
-                        children: [
-                          const Text(
-                            "Dadana Floral Boutique",
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Row(
-                            children: const [
-                              Icon(
-                                Icons.directions_bike,
-                                color: Colors.pink,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "\$ 0.65",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                SizedBox(
+                  height: 500,
+                  child: ListView.builder(
+                      itemCount: dealsController.listPizza.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Image.network(
+                                    '${dealsController.listPizza[index].image}',
+                                    height: 100,
+                                  ),
+                                  Column(
+                                    children: [
+                                      Text(
+                                        '${dealsController.listPizza[index].name}',
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                        ),
+                                      ),
+                                      Text(
+                                        '${dealsController.listPizza[index].price} \$',
+                                        style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                          color: Colors.pink,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
                               ),
                             ],
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      Container(
-                        color: Colors.pink,
-                        width: 100,
-                        height: 100,
-                        child: Column(
-                          children: const [
-                            Text(
-                              "Opens at Sun,\n07:30",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Column(
-                        children: [
-                          const Text(
-                            "Master Seafood & Meat",
-                            style: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          Row(
-                            children: const [
-                              Icon(
-                                Icons.directions_bike,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "Free delivery",
-                                style: TextStyle(
-                                  color: Colors.pink,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                        );
+                      }),
                 ),
               ],
             ),
