@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_clone/controller/deals_controller.dart';
-import 'package:foodpanda_clone/model/shops_items_model.dart';
 import 'package:foodpanda_clone/utils/default_color.dart';
 import 'package:get/get.dart';
 
@@ -86,96 +85,62 @@ class _ShopsScreenState extends State<ShopsScreen> {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Column(
+                Obx(
+                  () => GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 4,
+                        crossAxisSpacing: 5.0,
+                        mainAxisSpacing: 5.0,
+                      ),
+                      itemCount: dealsController.isMore.value
+                          ? dealsController.items.length
+                          : 4,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            Container(
+                              height: 50,
+                              width: 50,
+                              decoration: const BoxDecoration(
+                                color: Colors.black12,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                child: Image.network(
+                                  '${dealsController.items[index].img}',
+                                  height: 30,
+                                ),
+                              ),
+                            ),
+                            Text('${dealsController.items[index].title}'),
+                          ],
+                        );
+                      }),
+                ),
+                Obx(
+                  () => Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          ShopsItems(
-                            img:
-                                "https://cdn-icons-png.flaticon.com/512/135/135763.png?w=360",
-                            title: "Groceries",
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          ShopsItems(
-                            img:
-                                "https://iconarchive.com/download/i103468/paomedia/small-n-flat/shop.ico",
-                            title: "Convenience",
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          ShopsItems(
-                            img:
-                                "https://www.shareicon.net/data/512x512/2016/09/23/833535_water_512x512.png",
-                            title: "Household",
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          ShopsItems(
-                            img:
-                                "https://icon-library.com/images/icon-lipstick/icon-lipstick-11.jpg",
-                            title: "Beauty",
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: const [
-                          ShopsItems(
-                            img:
-                                "https://cdn-icons-png.flaticon.com/512/683/683974.png",
-                            title: "Beverages",
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          ShopsItems(
-                            img:
-                                "https://www.shareicon.net/download/2017/04/22/885118_food_512x512.png",
-                            title: "Bakery",
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          ShopsItems(
-                            img:
-                                "https://cdn-icons-png.flaticon.com/512/1529/1529570.png",
-                            title: "Health",
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          ShopsItems(
-                            img:
-                                "https://medias.pylones.com/img/p/6/4/6/2/6462-large_default.jpg",
-                            title: "Electronics",
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 40,
-                      ),
-                      Row(
-                        //mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
-                          SizedBox(
-                            width: 6,
-                          ),
-                          ShopsItems(
-                            img:
-                                "https://i.pinimg.com/originals/c3/6e/a4/c36ea4eb6b5af4332c7f1f11eff88015.png",
-                            title: "Pets",
-                          ),
-                        ],
+                      dealsController.isMore.value
+                          ? const Icon(
+                              Icons.arrow_drop_up,
+                              color: Colors.pink,
+                            )
+                          : const Icon(
+                              Icons.arrow_drop_down,
+                              color: Colors.pink,
+                            ),
+                      TextButton(
+                        onPressed: () {
+                          dealsController.isMore.value =
+                              !dealsController.isMore.value;
+                        },
+                        child: dealsController.isMore.value
+                            ? const Text("View less")
+                            : const Text("View all shop types"),
                       ),
                     ],
                   ),
