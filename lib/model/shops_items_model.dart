@@ -23,7 +23,7 @@ class ShopsItems extends StatelessWidget {
           child: Center(
             child: Image.network(
               img ?? "",
-              height: 30,
+              //height: 30,
             ),
           ),
         ),
