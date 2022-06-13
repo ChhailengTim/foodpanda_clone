@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodpanda_clone/controller/cuisines_controller.dart';
 import 'package:foodpanda_clone/controller/deals_controller.dart';
 import 'package:foodpanda_clone/utils/default_color.dart';
 import 'package:get/get.dart';
@@ -13,6 +14,7 @@ class ShopsScreen extends StatefulWidget {
 
 class _ShopsScreenState extends State<ShopsScreen> {
   final DealsController dealsController = Get.put(DealsController());
+  final SuciesController suciesController = Get.put(SuciesController());
   @override
   void initState() {
     dealsController.getListPizza();
@@ -162,6 +164,74 @@ class _ShopsScreenState extends State<ShopsScreen> {
                           ),
                         );
                       }),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Text(
+                  "Apple Gold Store",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Obx(
+                  () => SizedBox(
+                    height: 300,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: suciesController.listSucie.length,
+                        itemBuilder: (context, index) {
+                          return Center(
+                            child: Card(
+                              child: Stack(
+                                children: [
+                                  Column(
+                                    children: [
+                                      Image.network(
+                                        '${suciesController.listSucie[index].img}',
+                                        height: 250,
+                                      ),
+                                      const SizedBox(
+                                        height: 12,
+                                      ),
+                                      Text(
+                                        '${suciesController.listSucie[index].name}',
+                                        style: const TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Container(
+                                    width: 90,
+                                    height: 30,
+                                    decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '${suciesController.listSucie[index].price}00\$',
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
                 const Padding(
                   padding: EdgeInsets.all(8.0),
