@@ -344,14 +344,38 @@ class _PandamartScreenState extends State<PandamartScreen> {
                       height: 10,
                     ),
                     SizedBox(
-                      height: 200,
+                      height: 1008,
                       child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: dealsController.deals.length,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: sliderController.slide.length,
                           itemBuilder: (context, index) {
-                            return Card(
-                              child: Image.asset(
-                                  "${sliderController.deals[index].img}"),
+                            return Stack(
+                              children: [
+                                Card(
+                                  child: Image.network(
+                                    "${sliderController.slide[index].image}",
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Container(
+                                    height: 30,
+                                    width: 60,
+                                    decoration: BoxDecoration(
+                                      color: Colors.pink,
+                                      borderRadius: BorderRadius.circular(25),
+                                    ),
+                                    child: const Center(
+                                      child: Text(
+                                        "New",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.white),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             );
                           }),
                     ),
