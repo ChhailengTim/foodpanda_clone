@@ -197,236 +197,271 @@ class FoodDelivery extends StatelessWidget {
                   "All restaurants",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                Stack(
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                          height: 200,
-                          decoration: BoxDecoration(
+                SizedBox(
+                  height: 350,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: dealsController.listPizza.length,
+                    itemBuilder: (context, index) {
+                      return Column(
+                        children: [
+                          Image.network(
+                            '${dealsController.listPizza[index].image}',
+                            height: 200,
+                          ),
+                          const Text(
+                            "New",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          const Text(
+                            "Just Eat Express TK",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          const Spacer(),
+                          const Icon(
+                            Icons.star,
                             color: Colors.pink,
-                            borderRadius: BorderRadius.circular(5),
                           ),
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
+                          const Text("2.0 (1)"),
+                          Row(
+                            children: const [
+                              Text("\$\$\$ - "),
+                              Text("Asian"),
+                            ],
+                          ),
+                          Row(
+                            children: const [
+                              Icon(
+                                Icons.directions_bike,
                                 color: Colors.pink,
-                                borderRadius: BorderRadius.circular(5),
                               ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(2.0),
-                                child: Text(
-                                  "New",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
+                              SizedBox(
+                                width: 5,
                               ),
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            const Text(
-                              "Just Eat Express TK",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            const Spacer(),
-                            const Icon(
-                              Icons.star,
-                              color: Colors.pink,
-                            ),
-                            const Text("2.0 (1)"),
-                          ],
-                        ),
-                        Row(
-                          children: const [
-                            Text("\$\$\$ - "),
-                            Text("Asian"),
-                          ],
-                        ),
-                        Row(
-                          children: const [
-                            Icon(
-                              Icons.directions_bike,
-                              color: Colors.pink,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              "Free delivery",
-                              style: TextStyle(
-                                  color: Colors.pink,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: 90,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            color: Colors.orange,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: const Center(child: Text("Featured")),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Container(
-                          width: 110,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            color: Colors.orange,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: const Center(child: Text("30% Discount")),
-                        ),
-                        const SizedBox(
-                          height: 110,
-                        ),
-                        Container(
-                          width: 50,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: const Center(
-                              child: Text(
-                            "15 min",
-                            style: TextStyle(color: Colors.black),
-                          )),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                Stack(
-                  children: [
-                    Column(
-                      children: [
-                        Container(
-                          height: 200,
-                          decoration: BoxDecoration(
-                            color: Colors.pink,
-                            borderRadius: BorderRadius.circular(5),
-                          ),
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                color: Colors.pink,
-                                borderRadius: BorderRadius.circular(5),
+                              Text(
+                                "Free delivery",
+                                style: TextStyle(
+                                    color: Colors.pink,
+                                    fontWeight: FontWeight.bold),
                               ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(2.0),
-                                child: Text(
-                                  "New",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            const Text(
-                              "Just Eat Express TK",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            const Spacer(),
-                            const Icon(
-                              Icons.star,
-                              color: Colors.pink,
-                            ),
-                            const Text("2.0 (1)"),
-                          ],
-                        ),
-                        Row(
-                          children: const [
-                            Text("\$\$\$ - "),
-                            Text("Asian"),
-                          ],
-                        ),
-                        Row(
-                          children: const [
-                            Icon(
-                              Icons.directions_bike,
-                              color: Colors.pink,
-                            ),
-                            SizedBox(
-                              width: 5,
-                            ),
-                            Text(
-                              "Free delivery",
-                              style: TextStyle(
-                                  color: Colors.pink,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: 90,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            color: Colors.orange,
-                            borderRadius: BorderRadius.circular(10),
+                            ],
                           ),
-                          child: const Center(child: Text("Featured")),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        Container(
-                          width: 110,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            color: Colors.orange,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: const Center(child: Text("30% Discount")),
-                        ),
-                        const SizedBox(
-                          height: 110,
-                        ),
-                        Container(
-                          width: 50,
-                          height: 25,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: const Center(
-                              child: Text(
-                            "15 min",
-                            style: TextStyle(color: Colors.black),
-                          )),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                const Text(
-                  "data",
-                  style: TextStyle(
-                    fontSize: 600,
+                        ],
+                      );
+                    },
                   ),
-                )
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Stack(
+                    children: [
+                      Column(
+                        children: [
+                          Container(
+                            height: 200,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                image: const DecorationImage(
+                                    image: NetworkImage(
+                                        "https://play-lh.googleusercontent.com/Czq2cpxiA4yTdFIwV42ItMMYnhsJlJAsgmA00jWfiZx7GyneR0O6znY3kzQXMiTTDoJB"))),
+                            // child: Image.network(
+                            //   "https://play-lh.googleusercontent.com/Czq2cpxiA4yTdFIwV42ItMMYnhsJlJAsgmA00jWfiZx7GyneR0O6znY3kzQXMiTTDoJB",
+                            // ),
+                          ),
+                          Row(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: Colors.pink,
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: const Padding(
+                                  padding: EdgeInsets.all(2.0),
+                                  child: Text(
+                                    "New",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              const Text(
+                                "Just Eat Express TK",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              const Spacer(),
+                              const Icon(
+                                Icons.star,
+                                color: Colors.pink,
+                              ),
+                              const Text("2.0 (1)"),
+                            ],
+                          ),
+                          Row(
+                            children: const [
+                              Text("\$\$\$ - "),
+                              Text("Asian"),
+                            ],
+                          ),
+                          Row(
+                            children: const [
+                              Icon(
+                                Icons.directions_bike,
+                                color: Colors.pink,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "Free delivery",
+                                style: TextStyle(
+                                    color: Colors.pink,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 90,
+                              height: 25,
+                              decoration: BoxDecoration(
+                                color: Colors.orange,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  "Featured",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 110,
+                              height: 25,
+                              decoration: BoxDecoration(
+                                color: Colors.orange,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: const Center(
+                                child: Text(
+                                  "30% Discount",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 70,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: 50,
+                              height: 25,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: const Center(
+                                  child: Text(
+                                "15 min",
+                                style: TextStyle(color: Colors.black),
+                              )),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    "Shop by store",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Obx(
+                  () => SizedBox(
+                    height: 2050,
+                    child: ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: dealsController.listPizza.length,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            child: Row(
+                              children: [
+                                Stack(
+                                  children: [
+                                    Image.network(
+                                      '${dealsController.listPizza[index].image}',
+                                      height: 100,
+                                    ),
+                                    Container(
+                                      alignment: Alignment.center,
+                                      height: 25,
+                                      width: 40,
+                                      decoration: BoxDecoration(
+                                        color: Colors.pink,
+                                        borderRadius: BorderRadius.circular(15),
+                                      ),
+                                      child: Text(
+                                        '${dealsController.listPizza[index].id}',
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    Text(
+                                      '${dealsController.listPizza[index].name}',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                    Text(
+                                      '${dealsController.listPizza[index].price} \$',
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10,
+                                        color: Colors.pink,
+                                      ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          );
+                        }),
+                  ),
+                ),
               ],
             ),
           ),
