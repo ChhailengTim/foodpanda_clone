@@ -101,7 +101,7 @@ class FoodDelivery extends StatelessWidget {
                   height: 5,
                 ),
                 SizedBox(
-                  height: 150,
+                  height: 250,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: dealsController.deals.length,
@@ -111,7 +111,7 @@ class FoodDelivery extends StatelessWidget {
                             children: [
                               Image.asset(
                                 '${dealsController.deals[index].img}',
-                                height: 200,
+                                height: 250,
                               ),
                             ],
                           ),
@@ -133,7 +133,7 @@ class FoodDelivery extends StatelessWidget {
                 ),
                 Container(
                   color: Colors.white,
-                  height: 90,
+                  height: 150,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: dealsController.cuisines.length,
@@ -145,14 +145,14 @@ class FoodDelivery extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     '${dealsController.cuisines[index].imgc}',
-                                    height: 90,
+                                    height: 150,
                                   ),
                                   Container(
                                     padding: const EdgeInsets.only(
                                       left: 10,
-                                      top: 55,
+                                      top: 10,
                                     ),
-                                    width: 70,
+                                    width: 80,
                                     child: Text(
                                       dealsController.cuisines[index].title
                                           .toString(),
@@ -170,12 +170,12 @@ class FoodDelivery extends StatelessWidget {
                                 children: [
                                   Image.asset(
                                     '${dealsController.cuisines2[index].imgc}',
-                                    height: 90,
+                                    height: 150,
                                   ),
                                   Container(
                                     padding: const EdgeInsets.only(
                                       left: 10,
-                                      top: 55,
+                                      top: 10,
                                     ),
                                     width: 70,
                                     child: Text(
@@ -234,22 +234,18 @@ class FoodDelivery extends StatelessWidget {
                               Text("Asian"),
                             ],
                           ),
-                          Row(
-                            children: const [
-                              Icon(
-                                Icons.directions_bike,
+                          const Icon(
+                            Icons.directions_bike,
+                            color: Colors.pink,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          const Text(
+                            "Free delivery",
+                            style: TextStyle(
                                 color: Colors.pink,
-                              ),
-                              SizedBox(
-                                width: 5,
-                              ),
-                              Text(
-                                "Free delivery",
-                                style: TextStyle(
-                                    color: Colors.pink,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
+                                fontWeight: FontWeight.bold),
                           ),
                         ],
                       );
