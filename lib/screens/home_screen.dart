@@ -297,7 +297,7 @@ class HomeScreen extends StatelessWidget {
                       height: 10,
                     ),
                     Expanded(
-                      flex: 1,
+                      flex: 2,
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: dealsController.cuisines.length,
@@ -305,9 +305,12 @@ class HomeScreen extends StatelessWidget {
                             return Card(
                               child: Column(
                                 children: [
-                                  Image.asset(
-                                    '${dealsController.cuisines[index].imgc}',
-                                    height: 80,
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Image.asset(
+                                      '${dealsController.cuisines[index].imgc}',
+                                      height: 80,
+                                    ),
                                   ),
                                   Text(
                                     dealsController.cuisines[index].title
@@ -315,9 +318,15 @@ class HomeScreen extends StatelessWidget {
                                     style: const TextStyle(
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  Image.asset(
-                                    '${dealsController.cuisines2[index].imgc}',
-                                    height: 80,
+                                  const SizedBox(
+                                    height: 15,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Image.asset(
+                                      '${dealsController.cuisines2[index].imgc}',
+                                      height: 80,
+                                    ),
                                   ),
                                   Text(
                                     dealsController.cuisines2[index].title
