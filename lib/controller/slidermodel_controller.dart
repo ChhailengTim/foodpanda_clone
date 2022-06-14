@@ -32,6 +32,51 @@ class SliderController extends GetxController {
           "https://i0.wp.com/www.kbcambodia.com/wp-content/uploads/2016/07/Koi-Cafe-2.jpg?fit=960%2C354&ssl=1",
     ),
   ].obs;
+  final slide2 = <SliderModel>[
+    SliderModel(
+      image:
+          "https://i0.wp.com/www.kbcambodia.com/wp-content/uploads/2015/10/the-pizza-company-4.jpg?fit=1024%2C384&ssl=1",
+    ),
+    SliderModel(
+      image:
+          "https://dap-business.com/wp-content/uploads/2021/08/155-1024x510.png",
+    ),
+    SliderModel(
+      image:
+          "https://www.cbcl.com.kh/wp-content/uploads/2020/06/BG-Product.jpg",
+    ),
+    SliderModel(
+      image:
+          "https://cdn.sanity.io/images/92ui5egz/production/3802afc076601eb3faa410323c22e88c55e6bc29-1920x1080.jpg?w=1920&h=1080&auto=format",
+    ),
+    SliderModel(
+      image:
+          "https://exchangesquare.com.kh/wp-content/uploads/2017/05/cafe-amazon.jpg",
+    ),
+    SliderModel(
+      image:
+          "https://i0.wp.com/www.kbcambodia.com/wp-content/uploads/2016/07/Koi-Cafe-2.jpg?fit=960%2C354&ssl=1",
+    ),
+    SliderModel(
+      image:
+          "https://img.fresherslive.com/latestnews/images/articles/width-900/2022/02/25/sting-energy-drink-ad-cast-62184db971075-1645759929.jpg",
+    ),
+    SliderModel(
+      image: "https://i.ytimg.com/vi/VVQedfgm7gY/maxresdefault.jpg",
+    ),
+    SliderModel(
+      image:
+          "https://cdnb.artstation.com/p/marketplace/presentation_assets/000/390/477/large/file.jpg?1590869411",
+    ),
+    SliderModel(
+      image:
+          "https://m.media-amazon.com/images/S/aplus-media/vc/650085a8-e613-4d24-b831-4e82d65746e5._.jpg",
+    ),
+    SliderModel(
+      image:
+          "https://i0.wp.com/annyeongoppa.com/wp-content/uploads/2021/02/13784f1b-b7f0-420e-8895-2a14b2eb2490.png?fit=2560%2C1440&ssl=1",
+    ),
+  ].obs;
 
   final gridItem = <ItemGrid>[
     ItemGrid(
