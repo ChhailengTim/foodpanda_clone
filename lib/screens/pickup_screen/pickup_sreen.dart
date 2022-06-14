@@ -33,6 +33,14 @@ class _PickupScreenState extends State<PickupScreen> {
             Text("56 Street 337"),
           ],
         ),
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.card_travel,
+                color: Colors.white,
+              ))
+        ],
       ),
       body: CustomScrollView(
         slivers: [

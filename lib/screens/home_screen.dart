@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_clone/controller/deals_controller.dart';
 import 'package:foodpanda_clone/model/food_custom.dart';
+import 'package:foodpanda_clone/screens/cuisines_screen/cuisines_screen.dart';
 import 'package:foodpanda_clone/screens/food_delivery/food_delivery.dart';
 import 'package:foodpanda_clone/screens/pandamart/pandamart.dart';
 import 'package:foodpanda_clone/screens/pickup_screen/pickup_sreen.dart';
@@ -298,47 +299,57 @@ class HomeScreen extends StatelessWidget {
                     ),
                     Expanded(
                       flex: 2,
-                      child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          itemCount: dealsController.cuisines.length,
-                          itemBuilder: (context, index) {
-                            return Card(
-                              child: Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset(
-                                      '${dealsController.cuisines[index].imgc}',
-                                      height: 80,
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const CuisinesScreen(),
+                            ),
+                          );
+                        },
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: dealsController.cuisines.length,
+                            itemBuilder: (context, index) {
+                              return Card(
+                                child: Column(
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.asset(
+                                        '${dealsController.cuisines[index].imgc}',
+                                        height: 80,
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    dealsController.cuisines[index].title
-                                        .toString(),
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  const SizedBox(
-                                    height: 15,
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset(
-                                      '${dealsController.cuisines2[index].imgc}',
-                                      height: 80,
+                                    Text(
+                                      dealsController.cuisines[index].title
+                                          .toString(),
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold),
                                     ),
-                                  ),
-                                  Text(
-                                    dealsController.cuisines2[index].title
-                                        .toString(),
-                                    style: const TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ],
-                              ),
-                            );
-                          }),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.asset(
+                                        '${dealsController.cuisines2[index].imgc}',
+                                        height: 80,
+                                      ),
+                                    ),
+                                    Text(
+                                      dealsController.cuisines2[index].title
+                                          .toString(),
+                                      style: const TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            }),
+                      ),
                     ),
                     const SizedBox(
                       height: 10,
