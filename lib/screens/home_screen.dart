@@ -4,6 +4,7 @@ import 'package:foodpanda_clone/controller/deals_controller.dart';
 import 'package:foodpanda_clone/model/food_custom.dart';
 import 'package:foodpanda_clone/screens/food_delivery/food_delivery.dart';
 import 'package:foodpanda_clone/screens/pandamart/pandamart.dart';
+import 'package:foodpanda_clone/screens/pickup_screen/pickup_sreen.dart';
 import 'package:foodpanda_clone/screens/shops/shops_screen.dart';
 
 import 'package:foodpanda_clone/utils/default_color.dart';
@@ -220,37 +221,47 @@ class HomeScreen extends StatelessWidget {
                           const SizedBox(
                             height: 10,
                           ),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.45,
-                            height: 80,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(15.0),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      FoodCustom(
-                                        text: "Pick-up",
-                                        subtext: "Up to 50% off",
-                                      ),
-                                    ],
-                                  ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const PickupScreen(),
                                 ),
-                                const Spacer(),
-                                Container(
-                                  alignment: Alignment.bottomRight,
-                                  child: const Image(
-                                    height: 50,
-                                    image: AssetImage("image/food4.png"),
+                              );
+                            },
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.45,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(15.0),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: const [
+                                        FoodCustom(
+                                          text: "Pick-up",
+                                          subtext: "Up to 50% off",
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
+                                  const Spacer(),
+                                  Container(
+                                    alignment: Alignment.bottomRight,
+                                    child: const Image(
+                                      height: 50,
+                                      image: AssetImage("image/food4.png"),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
