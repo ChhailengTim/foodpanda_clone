@@ -344,7 +344,7 @@ class _PandamartScreenState extends State<PandamartScreen> {
                       height: 10,
                     ),
                     SizedBox(
-                      height: 1008,
+                      height: 1100,
                       child: ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           itemCount: sliderController.slide.length,
