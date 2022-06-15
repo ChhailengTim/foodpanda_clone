@@ -34,7 +34,7 @@ class CuisinesScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       image: const DecorationImage(
                         image: NetworkImage(
-                            "https://www.creativechinese.com/wp-content/uploads/2017/04/default-pasta.jpg"),
+                            "https://cdn.tasteatlas.com/images/dishes/a5390c995b6d4ad9baa9a8c88459fbe3.jpg"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(10)),
@@ -114,7 +114,7 @@ class CuisinesScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       image: const DecorationImage(
                         image: NetworkImage(
-                            "https://www.creativechinese.com/wp-content/uploads/2017/04/default-pasta.jpg"),
+                            "https://grantourismotravels.com/wp-content/uploads/2021/02/Authentic-Nom-Banh-Chok-Recipe-Cambodian-Khmer-Noodles-Copyright-2021-Terence-Carter-Grantourismo.jpg"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(10)),
@@ -285,7 +285,7 @@ class CuisinesScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       image: const DecorationImage(
                         image: NetworkImage(
-                            "https://www.creativechinese.com/wp-content/uploads/2017/04/default-pasta.jpg"),
+                            "https://goldentemplevilla.com/wp-content/uploads/2021/09/Cambodia-Lap-Khmer-1-1080x675.jpg"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(10)),
@@ -365,7 +365,7 @@ class CuisinesScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       image: const DecorationImage(
                         image: NetworkImage(
-                            "https://www.creativechinese.com/wp-content/uploads/2017/04/default-pasta.jpg"),
+                            "https://a.cdn-hotels.com/gdcs/production51/d1045/381fbd5d-5163-46b0-8a78-c72554acff3c.jpg"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(10)),
