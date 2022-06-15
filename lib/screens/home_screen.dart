@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_clone/controller/deals_controller.dart';
 import 'package:foodpanda_clone/model/food_custom.dart';
+import 'package:foodpanda_clone/screens/card_screen/card_screen.dart';
 import 'package:foodpanda_clone/screens/cuisines_screen/cuisines_screen.dart';
+import 'package:foodpanda_clone/screens/daily_deals/daily_deals.dart';
 import 'package:foodpanda_clone/screens/food_delivery/food_delivery.dart';
 import 'package:foodpanda_clone/screens/pandamart/pandamart.dart';
 import 'package:foodpanda_clone/screens/pickup_screen/pickup_sreen.dart';
@@ -47,7 +49,14 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CardScreen(),
+                ),
+              );
+            },
             icon: const Icon(Icons.card_travel),
           ),
         ],
@@ -372,9 +381,20 @@ class HomeScreen extends StatelessWidget {
                             return Card(
                               child: Row(
                                 children: [
-                                  Image.asset(
-                                    '${dealsController.deals[index].img}',
-                                    height: 200,
+                                  GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              const DailyDeals(),
+                                        ),
+                                      );
+                                    },
+                                    child: Image.asset(
+                                      '${dealsController.deals[index].img}',
+                                      height: 200,
+                                    ),
                                   ),
                                 ],
                               ),
