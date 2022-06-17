@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_clone/controller/deals_controller.dart';
+import 'package:foodpanda_clone/screens/food_delivery/all_res_screen/res_screen.dart';
 import 'package:foodpanda_clone/utils/default_color.dart';
 import 'package:get/get.dart';
 
@@ -197,67 +198,75 @@ class FoodDelivery extends StatelessWidget {
                   "All restaurants",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
-                  height: 350,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: dealsController.listPizza.length,
-                    itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          Image.network(
-                            '${dealsController.listPizza[index].image}',
-                            height: 200,
-                          ),
-                          const Text(
-                            "New",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            "${dealsController.listPizza[index].name}",
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RestaurantScreen()));
+                  },
+                  child: SizedBox(
+                    height: 350,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: dealsController.listPizza.length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            Image.network(
+                              '${dealsController.listPizza[index].image}',
+                              height: 200,
                             ),
-                          ),
-                          const Spacer(),
-                          const Icon(
-                            Icons.star,
-                            color: Colors.pink,
-                          ),
-                          const Text("2.0 (1)"),
-                          Row(
-                            children: [
-                              Text(
-                                "${dealsController.listPizza[index].price} \$-",
-                                style: const TextStyle(
-                                    color: Colors.red,
-                                    fontWeight: FontWeight.bold),
+                            const Text(
+                              "New",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "${dealsController.listPizza[index].name}",
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
                               ),
-                              const Text("Asian"),
-                            ],
-                          ),
-                          const Icon(
-                            Icons.directions_bike,
-                            color: Colors.pink,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          const Text(
-                            "Free delivery",
-                            style: TextStyle(
-                                color: Colors.pink,
-                                fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      );
-                    },
+                            ),
+                            const Spacer(),
+                            const Icon(
+                              Icons.star,
+                              color: Colors.pink,
+                            ),
+                            const Text("2.0 (1)"),
+                            Row(
+                              children: [
+                                Text(
+                                  "${dealsController.listPizza[index].price} \$-",
+                                  style: const TextStyle(
+                                      color: Colors.red,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const Text("Asian"),
+                              ],
+                            ),
+                            const Icon(
+                              Icons.directions_bike,
+                              color: Colors.pink,
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            const Text(
+                              "Free delivery",
+                              style: TextStyle(
+                                  color: Colors.pink,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
                   ),
                 ),
                 Padding(
