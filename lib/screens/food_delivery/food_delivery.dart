@@ -218,9 +218,12 @@ class FoodDelivery extends StatelessWidget {
                           const SizedBox(
                             width: 5,
                           ),
-                          const Text(
-                            "Just Eat Express TK",
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                          Text(
+                            "${dealsController.listPizza[index].name}",
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
                           const Spacer(),
                           const Icon(
@@ -229,9 +232,14 @@ class FoodDelivery extends StatelessWidget {
                           ),
                           const Text("2.0 (1)"),
                           Row(
-                            children: const [
-                              Text("\$\$\$ - "),
-                              Text("Asian"),
+                            children: [
+                              Text(
+                                "${dealsController.listPizza[index].price} \$-",
+                                style: const TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              const Text("Asian"),
                             ],
                           ),
                           const Icon(
