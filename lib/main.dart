@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:foodpanda_clone/screens/food_delivery/all_res_screen/item_build.dart';
 import 'package:get/get.dart';
 import 'package:foodpanda_clone/utils/default_color.dart';
+
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: DefaultColor.primaryswatch,
       ),
-      home: const ItemBuild(),
+      home: const HomeScreen(),
     );
   }
 }
